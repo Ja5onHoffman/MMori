@@ -1,0 +1,25 @@
+
+td {
+  border: 1px solid black;
+  height: 2px;
+  width: 2px;
+}
+
+.active {
+  background-color: green;
+}
+
+input {
+  width: 50px;
+}
+
+#tablediv {
+    display: table;
+    margin: auto;
+}
+
+#daytable {
+position: absolute;
+margin-left: -200px;
+top: 20px;
+}
