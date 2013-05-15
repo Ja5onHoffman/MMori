@@ -7,10 +7,15 @@ var timeDiff = 0;
 $(document).ready(function(){
   $('#send').on('click', getDate);
   $('#addbutton').on('click', defineTable);
+  $('#addbutton').on('click', removeQ);
 });
 
 function addRow() {
   $('#daytable').append('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
+}
+
+function removeQ () {
+  $('#questions').remove();
 }
              
 function toggle() {
