@@ -77,6 +77,10 @@ input {
   font-size: 20px;
 }
 
+#startover {
+  display: none;
+}
+
 #tablediv {
   width: 100%;
   margin: auto;

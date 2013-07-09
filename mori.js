@@ -43,11 +43,11 @@ function createTable(rows) {
 
 function getDate() {
   var month = Number($('#month').val() - 1);
-  birthday.setMonth(month);
+    birthday.setMonth(month);
   var day = Number($('#day').val());
-  birthday.setDate(day);
+    birthday.setDate(day);
   var year = Number($('#year').val());
-  birthday.setFullYear(year);
+    birthday.setFullYear(year);
   $('#month').val('');
   $('#day').val('');
   $('#year').val('');
