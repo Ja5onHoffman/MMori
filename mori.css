@@ -79,7 +79,30 @@ input {
 
 #startover {
   display: none;
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  top: 190px;
+  left: 950px;
 }
+
+#startover:hover {
+   -webkit-transform: scale(0.9); 
+  -moz-transform: scale(0.9);
+  -o-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.startover {
+  height: 150px;
+  width: 150px;
+  border: 2px solid black;
+  background: grey;
+  position: absolute;
+  top: 190px;
+  left: 950px;
+}
+
 
 #tablediv {
   width: 100%;

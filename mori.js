@@ -8,14 +8,27 @@ $(document).ready(function(){
   $('#send').on('click', getDate);
   $('#addbutton').on('click', defineTable);
   $('#addbutton').on('click', removeQ);
+  $('#addbutton').on('click', startOver);
+  $('#startover').on('click', function() {
+    $('#startover').hide();
+    $('#daytable').hide();
+    $('#questions').show();
+    
+  })
 });
+
+var original = 
 
 function addRow() {
   $('#daytable').append('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
 }
 
 function removeQ () {
-  $('#questions').remove();
+  $('#questions').hide();
+}
+
+function startOver () {
+  $('#startover').show();
 }
              
 function toggle() {
