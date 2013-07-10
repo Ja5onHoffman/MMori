@@ -10,14 +10,13 @@ $(document).ready(function(){
   $('#addbutton').on('click', removeQ);
   $('#addbutton').on('click', startOver);
   $('#startover').on('click', function() {
+    $('tr').remove();
     $('#startover').hide();
-    $('#daytable').hide();
     $('#questions').show();
-    
-  })
+    timeDiff = 0
+  }) 
 });
 
-var original = 
 
 function addRow() {
   $('#daytable').append('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
