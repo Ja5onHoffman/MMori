@@ -9,12 +9,7 @@ $(document).ready(function(){
   $('#addbutton').on('click', defineTable);
   $('#addbutton').on('click', removeQ);
   $('#addbutton').on('click', startOver);
-  $('#startover').on('click', function() {
-    $('tr').remove();
-    $('#startover').hide();
-    $('#questions').show();
-    timeDiff = 0
-  }) 
+  $('#startover').on('click', beginAgain);
 });
 
 
@@ -24,6 +19,13 @@ function addRow() {
 
 function removeQ () {
   $('#questions').hide();
+}
+
+function beginAgain() {
+  $('tr').remove();
+  $('#startover').hide();
+  $('#questions').show();
+  timeDiff = 0
 }
 
 function startOver () {
@@ -37,8 +39,16 @@ function toggle() {
 function defineTable() {
   getDate();
   var rows = Number($('#yearsalive').val());
+  var years = (timeDiff * 7 / 365);
+  console.log(years);
+  console.log(rows);
+  if (years > rows) {
+    alert('You\'re already dead? RIP!!')
+    beginAgain();
+  } else {
   createTable(rows);
   $('#daytable td:lt('+timeDiff+')').addClass('active');
+  }
 }
 
 function createTable(rows) {
@@ -63,7 +73,8 @@ function getDate() {
   $('#month').val('');
   $('#day').val('');
   $('#year').val('');
-  timeDiff += Math.floor((now - birthday) / 604800000);
+  timeDiff += Math.floor((now - birthday) / 606860307.692);
 }
+
 
 
