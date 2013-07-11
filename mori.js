@@ -19,12 +19,14 @@ function addRow() {
 
 function removeQ () {
   $('#questions').hide();
+  $('#description').hide();
 }
 
 function beginAgain() {
   $('tr').remove();
   $('#startover').hide();
   $('#questions').show();
+  $('#description').show();
   timeDiff = 0
 }
 
@@ -40,8 +42,6 @@ function defineTable() {
   getDate();
   var rows = Number($('#yearsalive').val());
   var years = (timeDiff * 7 / 365);
-  console.log(years);
-  console.log(rows);
   if (years > rows) {
     alert('You\'re already dead? RIP!!')
     beginAgain();

@@ -55,6 +55,15 @@ header#title {
     font-size: 24px; 
 }
 
+#description {
+  margin: auto;
+  width: 50%;
+  font-family: 'sans-serif', Arial;
+  color: #000000;
+  text-align: left;
+  font-size: 16px; 
+}
+
 fieldset {
     border: 0px; 
 }
