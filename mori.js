@@ -5,21 +5,13 @@ var timeDiff = 0;
 
 
 $(document).ready(function(){
-  $('#send').on('click', getDate);
   $('#addbutton').on('click', defineTable);
-  $('#addbutton').on('click', removeQ);
-  $('#addbutton').on('click', startOver);
   $('#startover').on('click', beginAgain);
 });
 
 
 function addRow() {
   $('#daytable').append('<tr><td></td><td></td><td></td><td></td><td></td></tr>');
-}
-
-function removeQ () {
-  $('#questions').hide();
-  $('#description').hide();
 }
 
 function beginAgain() {
@@ -30,7 +22,9 @@ function beginAgain() {
   timeDiff = 0
 }
 
-function startOver () {
+function proceed() {
+  $('#questions').hide();
+  $('#description').hide();
   $('#startover').show();
 }
              
@@ -42,10 +36,14 @@ function defineTable() {
   getDate();
   var rows = Number($('#yearsalive').val());
   var years = (timeDiff * 7 / 365);
+
+  
+
   if (years > rows) {
-    alert('You\'re already dead? RIP!!')
-    beginAgain();
+  alert('If you lived ' + rows + ' years after your birthday, then you\'re already dead. RIP!');
+  beginAgain();
   } else {
+  proceed();
   createTable(rows);
   $('#daytable td:lt('+timeDiff+')').addClass('active');
   }
@@ -70,6 +68,25 @@ function getDate() {
     birthday.setDate(day);
   var year = Number($('#year').val());
     birthday.setFullYear(year);
+    console.log(month);
+    console.log(day);
+    console.log(year);
+
+  if (month === '' || month.length < 1 || month === 0) {
+    alert('Please include a valid one or two digit month.');
+    beginAgain();
+  };
+
+  if (day === '' || day.length < 1 || day === 0) {
+    alert('Please include a valid one or two digit date.');
+    beginAgain();
+  };
+
+  if ( year === '' || year.length < 4 || year === 0) {
+    alert('Please include a valid four digit year.')
+    beginAgain();
+  };
+
   $('#month').val('');
   $('#day').val('');
   $('#year').val('');
